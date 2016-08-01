@@ -33,6 +33,8 @@ function popUp(elem)
 			$("img#pop").css("height", "75%");
 			$("img#pop").css("width", "75%");
 			$("img#pop").after('<figcaption class="caption">This image has been rescaled.</figcaption>');
+      $("figure#pop").css("margin-left", 200);
+      $("figure#pop").css("margin-top", 50);
       $("div.popup").css("height", this.height * .75 + 200);
       $("div.popup").css("width", this.width * .75 + 200);
 		}
@@ -46,3 +48,4 @@ function popUp(elem)
 }, 500);
 }
 
+      $("div.popup").css("width", this.width * .75 + 200);
