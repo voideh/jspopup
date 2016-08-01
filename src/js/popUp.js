@@ -32,9 +32,10 @@ function popUp(elem)
         opacity : 100,
         width: this.width * .75 + 200,
       }, 600);
+
       $("div.popup").append(img);
-      $("img#pop").css("width", "75%");
-      $("img#pop").css("height", "75%");
+      $("img#pop").css("width", "85%");
+      $("img#pop").css("height", "85%");
 			$("img#pop").after('<figcaption class="caption">This image has been rescaled.</figcaption>');
       $("figure#pop").css("margin-left", 200);
       $("figure#pop").css("margin-top", 50);
