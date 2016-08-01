@@ -36,7 +36,7 @@ figure#pop{
 
 #quit{
 	position:fixed;
-	background-color: #a3a3a3;
+	background-color:hsl(360,45%,50%);
 	border: none;
 	color: white;
 	display: inline-block;

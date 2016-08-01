@@ -5,8 +5,6 @@ just popup those images and make em look okay...
 thats the main goal right now.
 	 */
 var doc = $("body");
-var img = $(".popup");
-
 var underDiv = '<div id="base"></div>'
 var div = '<div class="popup"></div>'
 
