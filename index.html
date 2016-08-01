@@ -5,8 +5,7 @@
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<img src="s.jpg" class="popup">
-<img src="x.jpg" class="popup">
+<a href="x.jpg" id="popIt"><img src="s.jpg" class="popup"></a>
 </body>
 
 <script>
@@ -16,20 +15,36 @@ var img = $(".popup");
 var underDiv = '<div id="base"></div>'
 var div = '<div class="popup"></div>'
 
-$(".popup").click(popUp);
 
+$("a#popIt").bind('click', function(event)
+{
+	event.preventDefault();
+	popUp(this);
+});
 
-function popUp() {
+function popUp(elem)
+{
 	doc.append(underDiv);
 	$("#base").append(div);
-	$("div.popup").append('<img id="pop">');
+	var img = '<img src="' + elem.href + '" id="pop">';
+	$("div.popup").append(img);
 	$("div.popup").append('<button id="quit">Close</button>');
-	$("div.popup").css({width: $(this).width()+ 100, height: $(this).height() + 100});
-	$("#pop").attr("src", $(this).attr("src"));
+	$("<img/>").attr("src", $("#pop").attr("src"))
+		.on("load",function(){
+			if(this.height > 900 && this.width > 900)
+		{
+			// resize the image...???
+				$("#pop").css("height", "95%");
+				$("#pop").after('<p class="caption">This image has been rescaled.</p>');
+		}
+		$("div.popup").css("height", this.height + 200);
+		$("div.popup").css("width", this.width + 200);
+		});	
 	$("button#quit").click(function()
 	{
 		$("#base").remove();
 	});
-};
+}
+
 </script>
 </html>
