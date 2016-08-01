@@ -33,10 +33,14 @@ function popUp(elem)
 			$("img#pop").css("height", "75%");
 			$("img#pop").css("width", "75%");
 			$("img#pop").after('<figcaption class="caption">This image has been rescaled.</figcaption>');
+      $("div.popup").css("height", this.height * .75 + 200);
+      $("div.popup").css("width", this.width * .75 + 200);
 		}
-		$("div.popup").css("height", this.height * .75 + 200);
-		$("div.popup").css("width", this.width * .75 + 200);
-		});	
+    else{
+		$("div.popup").css("height", this.height + 200);
+		$("div.popup").css("width", this.width + 200);
+}
+});
 		$("button#quit").click(function()
 		{$("#base").remove(); });
 }, 500);
