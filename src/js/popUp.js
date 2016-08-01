@@ -21,24 +21,30 @@ function popUp(elem)
 	$("#base").append(div);
 	var img = '<figure id="pop"><img src="' + elem.href + '" id="pop"></figure>';
 	setTimeout(function(){ 
-	$("div.popup").append(img);
 	$("div.popup").append('<button id="quit">X</button>');
-	$("<img/>").attr("src", $("img#pop").attr("src"))
+	$("<img/>").attr("src", elem.href)
 		.on("load",function(){
 		if(this.height > 900 && this.width > 900)
 		{
 		// resize the image...???
-			$("img#pop").css("height", "75%");
-			$("img#pop").css("width", "75%");
+      $("div.popup").animate({
+        height: this.height * .75 + 200,
+        opacity : 100,
+        width: this.width * .75 + 200,
+      }, 600);
+      $("div.popup").append(img);
+      $("img#pop").css("width", "75%");
+      $("img#pop").css("height", "75%");
 			$("img#pop").after('<figcaption class="caption">This image has been rescaled.</figcaption>');
       $("figure#pop").css("margin-left", 200);
       $("figure#pop").css("margin-top", 50);
-      $("div.popup").css("height", this.height * .75 + 200);
-      $("div.popup").css("width", this.width * .75 + 200);
 		}
     else{
-		$("div.popup").css("height", this.height + 200);
-		$("div.popup").css("width", this.width + 200);
+		$("div.popup").animate({
+      height: this.height + 200,
+      width: this.width + 200,
+    }, 500);
+      $("div.popup").append(img);
 }
 });
 		$("button#quit").click(function()
