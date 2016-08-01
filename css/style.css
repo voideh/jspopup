@@ -30,10 +30,13 @@ div.popup{
 	max-height:95%;
 }
 
-#pop{
+figure#pop{
 	margin:auto;
 }
 
+img#pop{
+	margin-left:10%;
+}
 
 #quit{
 	position:fixed;

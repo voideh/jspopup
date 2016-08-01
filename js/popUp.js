@@ -30,11 +30,12 @@ function popUp(elem)
 		if(this.height > 900 && this.width > 900)
 		{
 		// resize the image...???
-			$("img#pop").css("height", "85%");
+			$("img#pop").css("height", "75%");
+			$("img#pop").css("width", "75%");
 			$("img#pop").after('<figcaption class="caption">This image has been rescaled.</figcaption>');
 		}
-		$("div.popup").css("height", this.height + 200);
-		$("div.popup").css("width", this.width + 200);
+		$("div.popup").css("height", this.height * .75 + 200);
+		$("div.popup").css("width", this.width * .75 + 200);
 		});	
 		$("button#quit").click(function()
 		{$("#base").remove(); });
