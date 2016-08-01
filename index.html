@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jq.js"></script>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<img src="s.jpg" class="popup">
+<img src="x.jpg" class="popup">
+</body>
+
+<script>
+var doc = $("body");
+var img = $(".popup");
+
+var underDiv = '<div id="base"></div>'
+var div = '<div class="popup"></div>'
+
+$(".popup").click(popUp);
+
+
+function popUp() {
+	doc.append(underDiv);
+	$("#base").append(div);
+	$("div.popup").append('<img id="pop">');
+	$("div.popup").append('<button id="quit">Close</button>');
+	$("div.popup").css({width: $(this).width()+ 100, height: $(this).height() + 100});
+	$("#pop").attr("src", $(this).attr("src"));
+	$("button#quit").click(function()
+	{
+		$("#base").remove();
+	});
+};
+</script>
+</html>
