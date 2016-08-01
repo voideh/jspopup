@@ -25,7 +25,7 @@ function popUp(elem)
 	$("div.popup").append('<button id="quit">X</button>');
 	$("<img/>").attr("src", $("img#pop").attr("src"))
 		.on("load",function(){
-		if(this.height > 900 && this.width > 900)
+		if(this.height > 900 || this.width > 900)
 		{
 		// resize the image...???
 			$("img#pop").css("height", "75%");
