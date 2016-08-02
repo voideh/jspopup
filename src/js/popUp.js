@@ -36,7 +36,7 @@ function popUp(elem)
       $("div.popup").append(img);
       $("img#pop").css("width", "85%");
       $("img#pop").css("height", "85%");
-			$("img#pop").after('<figcaption class="caption">This image has been rescaled.</figcaption>');
+			$("img#pop").after('<figcaption class="caption">This image has been resized. Please open in new tab to view in full resolution.</figcaption>');
       $("figure#pop").css("margin-left", 200);
       $("figure#pop").css("margin-top", 50);
 		}
