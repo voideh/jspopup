@@ -38,42 +38,4 @@ h1
 	padding-bottom: 12em;
 }
 
-.cover
-{
-	width: 100%;
-	min-height: 100%;
-	position: absolute;
-	background-color: rgba(0, 0, 0, .85);
-	opacity: 0;
-	text-align: center;
-}
-
-.popup
-{
-	background-color: #f4f4f4;
-	margin: auto;
-	margin-top: 2em;
-	text-align:center;
-	height: 0;
-	width: 0;
-}
-
-#star
-{
-	opacity : 0;
-
-}
-
-#quit
-{
-	border: none;
-	float: right;
-	background-color: red;
-	color: white;
-	width: 30px;
-	height: 20px;
-	font-family: sans-serif;
-	font-size: 1em;
-	cursor : pointer;
-}
 
